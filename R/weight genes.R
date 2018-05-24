@@ -31,5 +31,6 @@ function(d_ori,labels){
           d_new[i,] <- d_new[i,] * t ** 2 * corxy ** 2  
           tv1[i,1] <- t
         }
-        return(d_new)
+        d<-d_new
+        return(d)
 }
