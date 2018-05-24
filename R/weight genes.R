@@ -1,12 +1,12 @@
-weight genes<-
+weightgenes<-
 function(d_ori,labels){
         d_new <- scale(d_ori,center = T,scale = T) #standardization of data set
         labels <- as.matrix(labels,nrow = 1,ncol = ncol(d_new))
         labels <- matrix(labels,nrow = 1,ncol = ncol(d_new))
         d_new <- rbind(d_new,labels)
         d_new <- d_new[,order(d_new[nrow(d_new),])] #sort the samples by labels
-        stn <- which(d_new[nrow(d_new),] == "or",arr.ind = T)
-        strm <- which(d_new[nrow(d_new),] == "rm",arr.ind = T)
+        stn <- which(d_new[nrow(d_new),] == "normal",arr.ind = T)
+        strm <- which(d_new[nrow(d_new),] == "tumour",arr.ind = T)
         ln <- append(stn,strm)
         nor_d <- d_new[,ln]
         lnor <- ncol(nor_d)
