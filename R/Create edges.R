@@ -1,4 +1,4 @@
-create edges<-
+createedges<-
 function(d,relationship,beta){
        reln <- list(relationship)
        beta <- list(beta)
